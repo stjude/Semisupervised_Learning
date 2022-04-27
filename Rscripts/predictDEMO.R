@@ -94,7 +94,7 @@ checkProb <- function(prob, ninstances, classes){
 #' function.
 #' @return a matrix of predicted probabilities
 #' @noRd
-predProb <- function(model, x, pred, pred.pars) {
+predProb.demo <- function(model, x, pred, pred.pars) {
   # Predict probabilities
   ppars <- c(list(model, x), pred.pars)
   # TODO: Call pred function using a try cast function

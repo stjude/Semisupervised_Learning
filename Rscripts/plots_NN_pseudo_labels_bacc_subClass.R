@@ -1,7 +1,7 @@
 library(ggplot2)
 library(glmnet)
 
-pseudo_result = read.csv('./python/output/all_seed_pseudo_label_subclass_summary.csv', header=TRUE)
+pseudo_result = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/all_seed_pseudo_label_subclass_summary.csv', header=TRUE)
 pseudo_result = pseudo_result[,-1]
 colnames(pseudo_result) = gsub("\\.\\.", ', ', colnames(pseudo_result))
 colnames(pseudo_result) = gsub("\\.", ' ', colnames(pseudo_result))
@@ -9,7 +9,9 @@ colnames(pseudo_result) = gsub("\\.", ' ', colnames(pseudo_result))
 #####
 select_dataset = c("35", "70_GSE", "LC", "HC")
 
-ref_pseudo_count = read.csv('./python/output/ref_pseudo_labels_count_subClass.csv', header=TRUE)
+ref_pseudo_count = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/ref_pseudo_labels_count_subClass.csv', header=TRUE)
+ref_pseudo_count=ref_pseudo_count[ref_pseudo_count$Dataset %in% select_dataset,]
+
 ref_pseudo_count$Label.type = factor(ref_pseudo_count$Label.type, 
                                      levels = c("HC SS label", "HC gse SS label", "SS label","gse SS label", 
                                                 "reference label", "test reference label"))
@@ -17,8 +19,7 @@ ref_pseudo_count$Label_type = factor(ref_pseudo_count$Label_type,
                                      levels = c("HC SS labels",  "LC SS labels", "Reference labels"))
 ref_pseudo_count$Dataset = factor(ref_pseudo_count$Dataset, levels=c("35", "35_GSE", "70_GSE","70HC_GSE", "70", "70_gseHC",  
                                                                      "35_gseHC", "70HC","HC"))
-
-prop_fig = ggplot(ref_pseudo_count[1:22,], aes(fill=Label_type, x=Dataset, y = Proportion3)) +
+prop_fig = ggplot(ref_pseudo_count[ref_pseudo_count %in% select_dataset,], aes(fill=Label_type, x=Dataset, y = Proportion3)) +
   geom_bar(position="stack", stat="identity" ) +
   scale_fill_brewer(palette = "Set3")+
   ylab("Proportion")+
@@ -116,9 +117,9 @@ ggsave(LFfig, file = "./figures/class_results/pseudo_labels_count_LFclasses.pdf"
 
 
 ########
-result = read.csv('./python/output/all_seeds_RF_balanced_subclass_summary.csv', header=TRUE)
+result = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/all_seeds_RF_balanced_subclass_summary.csv', header=TRUE)
 
-result = read.csv('./python/output/all_seeds_RF+NN_balanced_subclass_summary.csv', header=TRUE)
+result = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/all_seeds_RF+NN_balanced_subclass_summary.csv', header=TRUE)
 ########ANOVA#########
 
 CV = result[result$Validation == "cross_val", ]
@@ -172,26 +173,29 @@ res_acc = res_acc[res_acc$Dataset %in% select_dataset,]
 #sub_data = res_acc[!(res_acc$Dataset %in% c("35_gseHC", "35_GSE")),]
 #sub_data$Dataset = as.character(sub_data$Dataset)
 #sub_data$Dataset = factor(sub_data$Dataset, levels=c("35", "70", "70_GSE", "70HC", "70HC_GSE", "70_gseHC", "HC"))
-res_acc$Dataset = factor(res_acc$Dataset, levels=c("35", "35_GSE", "70_GSE","70HC_GSE", "70", "70_gseHC",  
-                                                   "35_gseHC", "70HC", "HC"))
+#res_acc$Dataset = factor(res_acc$Dataset, levels=c("35", "35_GSE", "70_GSE","70HC_GSE", "70", "70_gseHC",  
+#                                                   "35_gseHC", "70HC", "HC"))
 res_acc$Dataset = factor(res_acc$Dataset, levels = c("35", "70_GSE", "LC", "HC"))
 fig1 = ggplot(res_acc, aes(x=Dataset, y=Value, fill=Dataset)) + 
   geom_boxplot(outlier.shape = NA) + #geom_jitter(width=0.3)+
   ylab("Balanced Accuracy")+
   facet_grid(Validation~Model, labeller = as_labeller(metric_names))+
-  theme_bw(base_size = 22)+
+  theme_bw(base_size = 30)+
   scale_x_discrete(labels=c(`35` = "35% reference",
                    `70_GSE` = "+ all SS labels",
                    `LC` = "+ LC SS labels",
                    `HC` = "+ HC SS labels")) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, color = "black", face="bold"),
-        axis.text.y = element_text(color="black", face="bold"),
+  theme(axis.text.x = element_text(angle = 90, vjust = 1, hjust=1, color = "black", face="bold", size=21),
+        axis.text.y = element_text(color="black", face="bold", size=28),
         axis.title.x = element_blank(),
-        strip.text.x = element_text(size = 23),
+        axis.title.y = element_text(size=30, face = "bold"),
+        strip.text.x = element_text(size = 34),
+        strip.text.y = element_text(size = 26),
         panel.grid.minor = element_blank(),
+        panel.border = element_rect(size=3),
         legend.position = "none")
 fig1
-ggsave(fig1, file = './figures/class_results/RF_NN_overall_balanced_ACC-subClass_v3.pdf')
+ggsave(fig1, file = '/Volumes/qtran/Semisupervised_Learning/figures/class_results/RF_NN_overall_balanced_ACC-subClass_v3.pdf')
 
 RF_test_CV = aov(Value ~ Dataset, data = res_acc[res_acc$Model == "RF" & res_acc$Validation == "cross_val",])
 RF_pw_CV = TukeyHSD(RF_test_CV)

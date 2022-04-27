@@ -1,3 +1,7 @@
+
+colors.family = read.csv("/Volumes/qtran/Capper_reference_set/colors.family.key.csv")
+
+
 tscores = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/family_results/All_MCF_SETRED_SVM_Transductive_scores_wide.csv", header=TRUE)
 iscores = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/family_results/All_MCF_SETRED_SVM_Inductive_scores_wide.csv", header=TRUE)
 base_dir = "/Volumes/qtran/Semisupervised_Learning/figures/family_results/"
@@ -5,7 +9,6 @@ main_dir = "/Volumes/qtran/Semisupervised_Learning/processed_data/"
 traw = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/family_results/All_MCF_SETRED_SVM_Transductive_scores_long.csv", header=TRUE)
 #iraw = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/family_results/All_MCF_SETRED_SVM_Inductive_scores_long.csv", header=TRUE)
 
-colors.family = read.csv("/Volumes/qtran/Capper_reference_set/colors.family.key.csv")
 ########
 ####Use the predictive scores from the transductive data sets for glmnet calibration
 ####Then apply the model with the best lambda to get the calibrated transductive scores

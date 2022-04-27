@@ -1,16 +1,16 @@
 #########################
 base_dir = "/Volumes/qtran/Semisupervised_Learning/figures/class_results/"
 
-toutput = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/class_results/Calibrated_Trans_scores_wide.csv", header=TRUE)
+toutput = read.csv("/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/class_results/Calibrated_Trans_scores_wide.csv", header=TRUE)
 
-toutput_all = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/class_results/Calibrated_Transductive_scores_SETRED_SVM_long.csv", header=TRUE)
+toutput_all = read.csv("/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/class_results/Calibrated_Trans_scores_long.csv", header=TRUE)
 
 colnames(toutput) = gsub("\\.\\.", ", ", colnames(toutput))
 colnames(toutput) = gsub(".", " ", colnames(toutput), fixed=TRUE)
 toutput = toutput[,-1]
 
 ######RAW MAX SCORES########
-max_tscore = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/class_results/All_Transductive_MaxScores_SETRED_SVM.csv")
+max_tscore = read.csv("/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/class_results/All_Transductive_MaxScores_SETRED_SVM.csv")
 max_tscore$match = ifelse(max_tscore$pred_label == max_tscore$truth_label, 1, 0)
 
 #####MAX CALIBRATED SCORES######
@@ -40,18 +40,37 @@ plot.roc(max_calScores$match, max_calScores$pred_score, ci=TRUE, of="thresholds"
 ci.se.obj <- ci.se(rocobj_calb, boot.n=1000)
 ci.sp.obj <- ci.sp(rocobj_calb, boot.n=1000)
 
-pdf(paste0(base_dir, "/ROC_YoudenIndex_Class.pdf"), width = 6, height=6)
-plot(rocobj_calb, print.thres="best", print.thres.best.method="youden", col="blue", lwd=2, 
-     auc.polygon.col="lightblue", alpha = 0.8,print.auc.x = 0.75,print.auc.y = 0.818,
-     print.thres.col="blue", print.thres.best.weights=c(0.8, 0.5), 
-     print.auc=TRUE, cex.lab=1.3, cex.axis=1.3)
-plot(rocobj_raw, print.thres="best", print.thres.best.method="youden", col="red", lwd=2, 
+pdf(paste0(base_dir, "/ROC_YoudenIndex_Class.pdf"), width = 9, height=9)
+op = par(cex=1.5, lwd=3)
+plot(rocobj_calb, print.thres="best", print.thres.best.method="youden", col="blue", lwd=3, 
+     auc.polygon.col="lightblue", alpha = 0.8,print.auc.x = 1,print.auc.y = 0.86,
+     print.thres.col="blue", print.thres.best.weights=c(0.98, 0.5), print.thres.adj=c(0.50,1.2),
+     print.auc=TRUE, cex.lab=2, cex.axis=2)
+plot(rocobj_raw, print.thres="best", print.thres.best.method="youden", col="red", lwd=3, 
      auc.polygon.col="lightpink",
-     print.thres.col="red", print.auc=TRUE, add=TRUE, print.auc.y = 0.89, print.auc.x = 0.45)
+     print.thres.col="red", print.auc=TRUE, add=TRUE, print.auc.y = 0.90, print.auc.x = 0.45)
 legend(x=0.3,y= 0.13, legend=c("raw","calibrated"), lty = c(1,1), col=c("red","blue"), lwd=c(2,2))
 dev.off()
 
+pdf(paste0(base_dir, "/Threshold_Prec_Rec_Spec_Class.pdf"), width=9, height = 9)
+op = par(cex=1.4, lwd=3)
+plot(precision ~ threshold , thres_calb, type = "l", 
+     subset = is.finite(threshold), col = "blue", lwd=3,
+     cex.lab=1.6, cex.axis=1.8, ylab="Precision/Recall/Specificity", ylim = c(0, 1))
+lines(recall ~ threshold, thres_calb, type = "l", lty=2, 
+      subset = is.finite(threshold), col = "blue", lwd=3)
+lines(specificity ~ threshold, thres_calb, type = "l", lty=3, 
+      subset = is.finite(threshold), col = "blue", lwd=3)
+abline(v = 0.8, col="black", lwd=3, lty=2)
+text(0.79, 0.99, "prec = 0.988", cex = 1.2, col = "black", adj=c(1,0))
+text(0.79, 0.78, "recall = 0.795", cex = 1.2, col = "black", adj=c(1.1,0))
+text(0.95, 0.82, "spec = 0.783", cex = 1.2, col = "black", adj=c(0.67,0))
+legend(x=0.2, y=0.18, legend=c("precision","recall", "specificity"),
+       lty = c(1,2,3), col=c("blue","blue", "blue"), lwd=c(3,3,3))
+dev.off()
+
 pdf(paste0(base_dir, "/Threshold_vs_Spec+Sens_Class.pdf"))
+op = par(cex=1.5, lwd=3)
 plot(specificity + sensitivity ~ threshold, thres_calb, type = "l",  
      subset = is.finite(threshold), col = "blue", lwd=2, ylim=c(1, 2),
      cex.lab=1.2, cex.axis=1.2)
@@ -69,6 +88,7 @@ plot(rocobj_calb, print.thres="best", print.thres.best.method="youden",
      print.thres.best.weights=c(0.95, 0.5)) 
 
 
+
 pdf(paste0(base_dir, "/Threshold_calibrated_vs_Spec_Sens_Class.pdf"))
 plot(specificity ~ threshold , thres_calb, type = "l", 
      subset = is.finite(threshold), col = "blue", lwd=2,
@@ -84,21 +104,7 @@ legend(x=0.2, y=0.12, legend=c("specificity","sensitivity"),
        lty = c(1,2), col=c("blue","blue"), lwd=c(2,2))
 dev.off()
 
-pdf(paste0(base_dir, "/Threshold_Prec_Rec_Spec_Class.pdf"), width=6, height = 6)
-plot(precision ~ threshold , thres_calb, type = "l", 
-     subset = is.finite(threshold), col = "blue", lwd=2,
-     cex.lab=1.3, cex.axis=1.3, ylab="Precision/Recall/Specificity", ylim = c(0, 1))
-lines(recall ~ threshold, thres_calb, type = "l", lty=2, 
-      subset = is.finite(threshold), col = "blue", lwd=2)
-lines(specificity ~ threshold, thres_calb, type = "l", lty=3, 
-      subset = is.finite(threshold), col = "blue", lwd=2)
-abline(v = 0.8, col="black", lwd=2, lty=2)
-text(0.79, 1, "prec = 0.988", cex = 1, col = "black", adj=c(1,0))
-text(0.79, 0.78, "recall = 0.795", cex = 1, col = "black", adj=c(1.1,0))
-text(0.95, 0.78, "spec = 0.783", cex = 1, col = "black", adj=c(0.67,0))
-legend(x=0.2, y=0.18, legend=c("precision","recall", "specificity"),
-       lty = c(1,2,3), col=c("blue","blue", "blue"), lwd=c(2,2,2))
-dev.off()
+
 
 
 response = as.factor(toutput$truth_label)

@@ -1,7 +1,8 @@
 library(ggplot2)
 library(glmnet)
 library(dplyr)
-pseudo_result = read.csv('./python/output/all_seed_pseudo_label_family_summary.csv', header=TRUE)
+library(tidyr)
+pseudo_result = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/all_seed_pseudo_label_family_summary.csv', header=TRUE)
 pseudo_result = pseudo_result[,-1]
 colnames(pseudo_result) = gsub("\\.\\.", ', ', colnames(pseudo_result))
 colnames(pseudo_result) = gsub("\\.", ' ', colnames(pseudo_result))
@@ -19,7 +20,7 @@ pseudo_mean <- pseudo_long %>%
 ######
 select_dataset = c("35", "70_GSE", "LC", "HC")
 
-ref_pseudo_count = read.csv('./python/output/ref_pseudo_labels_count_family.csv', header=TRUE)
+ref_pseudo_count = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/ref_pseudo_labels_count_family.csv', header=TRUE)
 ref_pseudo_count$Label.type = factor(ref_pseudo_count$Label.type, 
                                     levels = c("HC SS label", "HC gse SS label", "SS label","gse SS label", 
                                                "reference label", "test reference label"))
@@ -120,7 +121,7 @@ ggsave(LFfig, file = "./figures/family_results/pseudo_labels_count_LFfamily.pdf"
 
 result = read.csv('./python/output/all_seeds_RF_balanced_family_summary.csv', header=TRUE)
 
-result = read.csv('./python/output/all_seeds_RF+NN_balanced_family_summary.csv', header=TRUE)
+result = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/all_seeds_RF+NN_balanced_family_summary.csv', header=TRUE)
 
 select_dataset = c("35", "70_GSE", "LC", "HC")
 ########ANOVA#########
@@ -183,16 +184,19 @@ fig1 = ggplot(res_acc, aes(x=Dataset, y=Value, fill=Dataset)) +
                             `70_GSE` = "+ all SS labels",
                             `LC` = "+ LC SS labels",
                             `HC` = "+ HC SS labels")) +
-  theme_bw(base_size = 22)+
+  theme_bw(base_size = 30)+
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, color = "black", face="bold"),
-        axis.text.y = element_text(color="black", face="bold"),
         axis.title.x = element_blank(),
-        strip.text.x = element_text(size = 22),
+        axis.title.y = element_text(size=30, face = "bold"),
+        axis.text.y = element_text(size=30, face = "bold", color="black"),
+        strip.text.x = element_text(size = 34),
+        strip.text.y = element_text(size = 25),
+        panel.border = element_rect(size=3),
         panel.grid.minor = element_blank(),
         legend.position = "none")
 fig1
 #ggsave(fig1, file = './figures/family_results/NN_overall_balanced_ACC-family.pdf')
-ggsave(fig1, file = './figures/family_results/RF_NN_overall_balanced_ACC-family_v3.pdf')
+ggsave(fig1, file = '/Volumes/qtran/Semisupervised_Learning/figures/family_results/RF_NN_overall_balanced_ACC-family_v3.pdf')
 ##### MultiPle Plot
 library(ggpubr)
 

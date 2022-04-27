@@ -1,6 +1,6 @@
 library(dplyr)
 type = "family"
-seed1 = read.csv(paste0("./python/output/seed1_pseudo_labels_", type, "_summary.csv"))
+seed1 = read.csv(paste0("/Volumes/qtran/Semisupervised_Learning/python/output/seed1_pseudo_labels_", type, "_summary.csv"))
 seed1 = seed1[,-1]
 
 get_HL_class = function(data, threshold){
@@ -73,7 +73,7 @@ p70HC_LF = pseudo70HC[, colnames(pseudo70HC) %in% LF_fam]
 p70HC_HF = pseudo70HC[, colnames(pseudo70HC) %in% HF_fam]
 ######
 library(ggplot2)
-ref_pseudo_count = read.csv(paste0("./python/output/pseudo_labels_HiLoFreq_Conf_", type, ".csv"), header=TRUE)
+ref_pseudo_count = read.csv(paste0("/Volumes/qtran/Semisupervised_Learning/python/output/pseudo_labels_HiLoFreq_Conf_", type, ".csv"), header=TRUE)
 #ref_pseudo_count$Freq_Conf = factor(ref_pseudo_count$Freq_Conf, 
 #                                    levels = c( "LF-LC", "LF-HC", "LF","HF-LC", "HF-HC","HF"))
 ref_pseudo_count = ref_pseudo_count[ref_pseudo_count$Dataset %in% c("35", "70_GSE","LC", "HC"),]
@@ -82,29 +82,29 @@ ref_pseudo_count$Freq_Conf = factor(ref_pseudo_count$Freq_Conf,
 ref_pseudo_count$Frequency = factor(ref_pseudo_count$Frequency, levels=c("Low", "High"))
 ref_pseudo_count$Confidence = factor(ref_pseudo_count$Confidence, levels=c("Low", "High"))
 
-ref_pseudo_count$Dataset = factor(ref_pseudo_count$Dataset, levels=c("35", "35_GSE", "70_GSE","70HC_GSE", "70", "70_gseHC",  
-                                                                    "35_gseHC", "70HC","HC"))
-ref_pseudo_count$Dataset = factor(ref_pseudo_count$Dataset, levels=c("35",  "70_GSE","LC", "HC"))
+#ref_pseudo_count$Dataset = factor(ref_pseudo_count$Dataset, levels=c("35", "35_GSE", "70_GSE","70HC_GSE", "70", "70_gseHC",  
+ #                                                                   "35_gseHC", "70HC","HC"))
+ref_pseudo_count$Dataset = factor(ref_pseudo_count$Dataset, levels=c("35",  "70","LC", "HC"))
 prop_fig = ggplot(ref_pseudo_count, aes(fill=Freq_Conf, x=Dataset, y = Proportion)) +
   geom_bar(position="stack", stat="identity", group="Frequency" ) +
   #scale_fill_brewer(palette = "Set3")+
   ylab("Proportion")+
-  geom_text(aes(y = label_y, label = round(Proportion, digits=2)), vjust = 1.5, colour = "black", size=8)+
+  geom_text(aes(y = label_y, label = round(Proportion, digits=2)), vjust = 1.3, colour = "black", size=15)+
   scale_fill_manual(values = c("#BEBADA", "#FFFFB3",   "#FDB462","#80B1D3", "#8DD3C7",  "#FB8072"))+
   #scale_fill_manual(values = c("#BEBADA", "#FFFFB3",  "#80B1D3", "#8DD3C7", "#FDB462",  "#FB8072"  ))+
   scale_y_continuous(breaks = seq(0, 1, by = .25)) +
   scale_x_discrete(position="top")+
-  theme_bw(base_size = 22, base_rect_size = 2, base_line_size = 1.8)+
+  theme_bw(base_size = 30, base_rect_size = 3, base_line_size = 1.8)+
   theme(axis.text.x = element_blank(),
         axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 25, face="bold"),
-        axis.text.y = element_text(color = "black", size = 25, face="bold"),
+        axis.title.y = element_text(size = 40, face="bold"),
+        axis.text.y = element_text(color = "black", size = 40, face="bold"),
         panel.grid.minor = element_blank(),
         panel.grid.major = element_blank(),
         legend.text=element_text(size=25),
         legend.position = "none")
 prop_fig
-ggsave(prop_fig, file=paste0("./figures/proportion3_pseudo_labels_4groups_", type, "_v3.pdf"))
+ggsave(prop_fig, file=paste0("/Volumes/qtran/Semisupervised_Learning/figures/proportion3_pseudo_labels_4groups_", type, "_v3.pdf"))
 
 count_fig = ggplot(ref_pseudo_count, aes(fill=Freq_Conf, x=Dataset, y = Count)) +
   geom_bar(position="stack", stat="identity" ) +
@@ -112,21 +112,21 @@ count_fig = ggplot(ref_pseudo_count, aes(fill=Freq_Conf, x=Dataset, y = Count)) 
   ylab("Count") + 
   scale_fill_manual(values = c("#BEBADA", "#FFFFB3",   "#FDB462","#80B1D3", "#8DD3C7",  "#FB8072"))+
   #scale_fill_manual(values = c("#BEBADA", "#FFFFB3",  "#80B1D3", "#8DD3C7", "#FDB462",  "#FB8072"  ))+
-  geom_text(aes(y = label_y1, label = Count), vjust = 1.5, colour = "black", size=8)+
+  geom_text(aes(y = label_y1, label = Count), vjust = 1.1, colour = "black", size=15, face="bold")+
   scale_y_continuous(breaks = seq(0, 3500, by = 500), position = "right") +
   scale_x_discrete(position="top")+
-  theme_bw(base_size = 22, base_rect_size = 2, base_line_size = 1.8)+
+  theme_bw(base_size = 30, base_rect_size = 3, base_line_size = 1.8)+
   theme(axis.text.x = element_blank(),
-        axis.text.y = element_text(color = "black", size=25, face = "bold"),
+        axis.text.y = element_text(color = "black", size=40, face = "bold"),
         axis.title.x = element_blank(),
-        axis.title.y = element_text(size = 25, face="bold"),
+        axis.title.y = element_text(size = 40, face="bold"),
         panel.grid.minor = element_blank(),
         panel.grid.major = element_blank(),
         legend.title = element_blank(),
-        legend.text=element_text(size=25, face="bold"),
+        legend.text=element_text(size=35, face="bold"),
         legend.position = c(0.15, 0.80))
 count_fig
-ggsave(count_fig, file=paste0("./figures/count2_pseudo_labels_4groups_", type, "_reorder_Freq_v3.pdf"))
+ggsave(count_fig, file=paste0("/Volumes/qtran/Semisupervised_Learning/figures/count2_pseudo_labels_4groups_", type, "_reorder_Freq_v3.pdf"))
 
 
 ######

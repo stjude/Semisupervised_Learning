@@ -3,12 +3,12 @@ library(ggplot2)
 library(dplyr)
 base_dir = "/Volumes/qtran/Semisupervised_Learning/figures/family_results/"
 
-ind_data = read.csv("./processed_data/family_results/All_MCF_Inductive_metrics.csv", header=TRUE)
+ind_data = read.csv("/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/family_results/All_MCF_Inductive_metrics.csv", header=TRUE)
 ind_data$MCF = as.factor(ind_data$MCF)
 ind_data$TrainFunction = as.factor(ind_data$TrainFunction)
 ind_data$Learner = as.factor(ind_data$Learner)
 
-trans_data = read.csv("./processed_data/family_results/All_MCF_Transductive_metrics.csv", header=TRUE)
+trans_data = read.csv("/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/family_results/All_MCF_Transductive_metrics.csv", header=TRUE)
 trans_data$MCF = as.factor(trans_data$MCF)
 trans_data$TrainFunction = as.factor(trans_data$TrainFunction)
 trans_data$Learner = as.factor(trans_data$Learner)
@@ -46,33 +46,37 @@ create_overall_plot = function(idata, tdata, metric = c("Balanced.Accuracy", "Sp
   acc = rbind(ind, trans)
   acc$Learner = as.factor(acc$Learner)
   acc$TrainFunction = as.factor(acc$TrainFunction)
-
-  acc_plot = ggplot(acc, aes(x = Learner , y = Specificity, fill=Learner)) + 
+  print(head(acc))
+  acc = as.data.frame(acc)
+  colnames(acc)[4] = "value"
+  acc_plot = ggplot(acc, aes(x = Learner , y = value, fill=Learner)) + 
     geom_boxplot(outlier.shape = 8)+
     #scale_fill_manual(values = c("#009999", "#FFBF00")) +
     facet_grid(TestType ~TrainFunction) +
-    labs(x = "", y = metric) +
-    ylim(0.99,1) +
+    labs(x = "Learner", y = eval(metric)) +
+    ylim(0.997,1) +
     #theme_minimal() +
-    theme(axis.text.y   = element_text(size=14),
-          axis.text.x   = element_text(size=12, angle = 30, hjust = 1),
-          axis.title.y  = element_text(size=14),
-          axis.title.x  = element_text(size=14),
+    theme(axis.text.y   = element_text(size=20),
+          axis.text.x   = element_text(size=18, angle = 30, hjust = 1),
+          axis.title.y  = element_text(size=20),
+          axis.title.x  = element_text(size=20),
           #panel.grid.minor.y = element_blank(),
           #panel.grid.major.x = element_blank(),
-          panel.grid.major.y = element_line(color = "gray", size = 0.5, linetype = "dotted"),
-          panel.grid.major.x = element_line(color = "gray", size = 0.5, linetype = "dotted"),
+          panel.grid.major.y = element_line(color = "gray", size = 1, linetype = "dotted"),
+          panel.grid.major.x = element_line(color = "gray", size = 1, linetype = "dotted"),
           panel.background = element_blank(), 
-          panel.border = element_rect(color="black", size=1, fill=NA),
-          strip.text.x = element_text(size = 14),
-          strip.text.y = element_text(size = 14),
+          panel.border = element_rect(color="black", size=3, fill=NA),
+          strip.text.x = element_text(size = 20),
+          strip.text.y = element_text(size = 20),
+          legend.text = element_text(size = 18),
+          legend.title = element_blank(),
           legend.position = "bottom") 
   
   ggsave(acc_plot, file = paste0(basedir, file)
          ,width = 11, height = 7, units="in")
 }
 
-create_overall_plot(ind_data, trans_data, metric="Specificity", basedir = base_dir, file = "Specificity_Overall.pdf")
+create_overall_plot(ind_data, trans_data, metric="Recall", basedir = base_dir, file = "Recall_Overall_zoom.pdf")
 
 #####ACCURACY#####
 acc_ind = ind_data %>% group_by(TrainFunction, Learner, seed) %>% 
@@ -112,18 +116,20 @@ acc_long_plot = ggplot(acc_long, aes(x = Learner , y = Balanced.Accuracy, fill=L
   geom_boxplot(outlier.shape = 8)+
   #scale_fill_manual(values = c("#009999", "#FFBF00")) +
   facet_grid(TestType ~TrainFunction) +
-  labs(x = "", y = "Accuracy") +
-  ylim(0.7,1) +
-  theme(axis.text.y   = element_text(size=14),
-        axis.text.x   = element_text(size=12, angle = 30, hjust = 1),
-        axis.title.y  = element_text(size=14),
-        axis.title.x  = element_text(size=14),
-        panel.grid.major.y = element_line(color = "gray", size = 0.5, linetype = "dotted"),
-        panel.grid.major.x = element_line(color = "gray", size = 0.5, linetype = "dotted"),
+  labs(x = "Learner", y = "Accuracy") +
+  ylim(0.8,1) +
+  theme(axis.text.y   = element_text(size=20),
+        axis.text.x   = element_text(size=18, angle = 30, hjust = 1),
+        axis.title.y  = element_text(size=20),
+        axis.title.x  = element_text(size=20),
+        panel.grid.major.y = element_line(color = "gray", size = 1, linetype = "dotted"),
+        panel.grid.major.x = element_line(color = "gray", size = 1, linetype = "dotted"),
         panel.background = element_blank(), 
-        panel.border = element_rect(color="black", size=1, fill=NA),
-        strip.text.x = element_text(size = 14),
-        strip.text.y = element_text(size = 14),
+        panel.border = element_rect(color="black", size=3, fill=NA),
+        strip.text.x = element_text(size = 20),
+        strip.text.y = element_text(size = 20),
+        legend.text = element_text(size = 18),
+        legend.title = element_blank(),
         legend.position = "bottom")
 
 ggsave(acc_long_plot, file = paste0(base_dir, "Accuracy_overall_zoom.pdf")
@@ -209,22 +215,23 @@ ggsave(pr_com_plot, file = paste0(base_dir, "PR_Combined_Overall.pdf"),
 pr_long_plot = ggplot(pr_long, aes(x = Learner, y = Values, fill=Learner)) + 
   geom_boxplot() + 
   facet_grid(TestType+Metrics~TrainFunction) +
-  labs(y = "Proportion", x="") +
+  labs(y = "Proportion", x="Learner") +
   ylim(0.7,1)+
-  theme(axis.text.y   = element_text(size=14),
-        axis.text.x   = element_text(size=14, angle = 45, hjust =1),
-        axis.title.y  = element_text(size=14),
-        axis.title.x  = element_text(size=14),
-        panel.grid.major.y = element_line(color = "gray", size = 0.5, linetype = "dotted"),
-        panel.grid.major.x = element_line(color = "gray", size = 0.5, linetype = "dotted"),
+  theme(axis.text.y   = element_text(size=18),
+        axis.text.x   = element_text(size=18, angle = 30, hjust =1),
+        axis.title.y  = element_text(size=18),
+        axis.title.x  = element_text(size=18),
+        panel.grid.major.y = element_line(color = "gray", size = 1, linetype = "dotted"),
+        panel.grid.major.x = element_line(color = "gray", size = 1, linetype = "dotted"),
         panel.background = element_blank(), 
-        panel.border = element_rect(color="black", size=1, fill=NA),
+        panel.border = element_rect(color="black", size=3, fill=NA),
         strip.text.x = element_text(size = 14),
-        strip.text.y = element_text(size = 14),
-        legend.position = "bottom", legend.text=element_text(size=12))
+        strip.text.y = element_text(size = 18),
+        legend.title = element_blank(),
+        legend.position = "bottom", legend.text=element_text(size=16))
 
 ggsave(pr_long_plot, file = paste0(base_dir, "PR_Combined_Long_Overall_zoom.pdf"),
-       width = 10, height = 8, units="in")
+       width = 11, height = 8, units="in")
 #####
 
 

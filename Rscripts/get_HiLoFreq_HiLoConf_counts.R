@@ -1,5 +1,5 @@
 library(dplyr)
-seed1 = read.csv('./python/output/seed1_pseudo_labels_family_summary.csv')
+seed1 = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/seed1_pseudo_labels_family_summary.csv')
 seed1 = seed1[,-1]
 diff = NULL
 for(i in 1:nrow(seed1)){
@@ -82,7 +82,7 @@ p70HC_LF = pseudo70HC[, colnames(pseudo70HC) %in% LF_fam]
 p70HC_HF = pseudo70HC[, colnames(pseudo70HC) %in% HF_fam]
 ######
 library(ggplot2)
-ref_pseudo_count = read.csv('./python/output/pseudo_labels_HiLoFreq_Conf_family.csv', header=TRUE)
+ref_pseudo_count = read.csv('/Volumes/qtran/Semisupervised_Learning/python/output/pseudo_labels_HiLoFreq_Conf_family.csv', header=TRUE)
 ref_pseudo_count$Freq_Conf = factor(ref_pseudo_count$Freq_Conf, 
                                      levels = c( "LF-LC", "HF-LC","LF-HC", "HF-HC", "LF", "HF"))
 ref_pseudo_count$Frequency = factor(ref_pseudo_count$Frequency, levels=c("Low", "High"))

@@ -2,7 +2,7 @@ tscores = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/class_
 iscores = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/family_results/All_SETRED_SVM_Inductive_scores_wide.csv", header=TRUE)
 base_dir = "/Volumes/qtran/Semisupervised_Learning/figures/class_results/"
 main_dir = "/Volumes/qtran/Semisupervised_Learning/processed_data/"
-traw = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/class_results/All_SETRED_SVM_Transductive_scores_long.csv", header=TRUE)
+traw = read.csv("/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/class_results/All_SETRED_SVM_Transductive_scores_long.csv", header=TRUE)
 iraw = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/class_results/All_SETRED_SVM_Inductive_scores_long.csv", header=TRUE)
 
 colors = read.csv("/Volumes/qtran/Capper_reference_set/color.key.allRef.csv")
@@ -67,7 +67,7 @@ calibrated_scores <- gather(pfit, pred_label, pred_score, 1:91, factor_key=FALSE
 calibrated_scores$pred_label = gsub("\\.1", "", calibrated_scores$pred_label)
 calibrated_scores$match = ifelse(calibrated_scores$truth_label == calibrated_scores$pred_label, "yes", "no")
 write.csv(calibrated_scores, file = "/Volumes/qtran/Semisupervised_Learning/processed_data/class_results/Calibrated_Trans_scores_long.csv")
-calibrated_scores = read.csv(file = "/Volumes/qtran/Semisupervised_Learning/processed_data/class_results/Calibrated_Trans_scores_long.csv", header=TRUE)
+calibrated_scores = read.csv(file = "/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/class_results/Calibrated_Trans_scores_long.csv", header=TRUE)
 ####draw density of all classes#####
 library(ggplot2)
 
@@ -81,10 +81,11 @@ p <- ggplot(no_matched, aes(pred_score, truth_label, fill = truth_label))+
   scale_x_continuous(limits = c(-0.0005, 0.4), breaks = seq(0, 1, 0.1)) +
   scale_fill_manual(values = colors$color) +
   geom_density_ridges(alpha= 0.8,  scale = 4, rel_min_height = 0.01, na.rm=TRUE) +
-  theme_ridges(font_size=12)+
-  theme(axis.text.y = element_text(colour = colors$color),
-        axis.text.x = element_text(size=12))+
+  theme_ridges(font_size=15)+
+  theme(axis.text.y = element_text(colour = colors$color, face="bold"),
+        axis.text.x = element_text(size=28))+
   theme(legend.position="none")
+p
 ggsave(p, file = paste0(base_dir, "Density_calibrated_scores_Unclassifiable_cases.pdf"), width=4, height=6.5)
 
 matched = calibrated_scores[calibrated_scores$match == "yes",]
@@ -92,12 +93,14 @@ p1 = ggplot(matched, aes(pred_score, as.factor(truth_label), fill = truth_label,
   labs(title="Calibrated scores for correctly classified cases", x="", y="")+
   scale_x_continuous(limits = c(-0.0050, 1), breaks = seq(0, 1, 0.1)) +
   scale_fill_manual(values = colors$color) +
-  geom_density_ridges(alpha= 0.8, rel_min_height = 0.01, scale = 4, na.rm=TRUE) +
-  theme_ridges(font_size=12)+
-  theme(axis.text.y = element_text(colour = colors$color),
-        axis.text.x = element_text(size=12))+
+  geom_density_ridges(alpha= 0.8, rel_min_height = 0.02, scale = 5, na.rm=TRUE) +
+  theme_ridges(font_size=15)+
+  theme(axis.text.y = element_text(colour = colors$color, face="bold"),
+        axis.text.x = element_text(size=28),
+        plot.title = element_text(size=24))+
   theme(legend.position="none")
-ggsave(p1, file = paste0(base_dir, "Density_calibrated_scores_Classifiable_cases.pdf"), width=4, height=6.5)
+p1
+ggsave(p1, file = paste0(base_dir, "Density_calibrated_scores_Classifiable_cases.pdf"))
 
 #####################RAW_SCORES####################
 traw$truth_label = as.factor(traw$truth_label)
@@ -107,11 +110,12 @@ p2 =  ggplot(traw[traw$match=="0", ], aes(pred_score, truth_label, fill = truth_
   scale_x_continuous(limits = c(-0.0005, 0.04), breaks = seq(0, 1, 0.01)) +
   scale_fill_manual(values = colors$color) +
   geom_density_ridges(alpha= 0.8,  scale = 4, rel_min_height = 0.001, na.rm=TRUE) +
-  theme_ridges(font_size=12)+
-  theme(axis.text.y = element_text(colour = colors$color),
-        axis.text.x = element_text(size=12),
+  theme_ridges(font_size=15)+
+  theme(axis.text.y = element_text(colour = colors$color, face="bold"),
+        axis.text.x = element_text(size=28),
         plot.title = element_text(size=12))+
   theme(legend.position="none")
+p2
 ggsave(p2, file = paste0(base_dir, "Density_raw_scores_Unclassifiable_cases.pdf"))
 
 
@@ -120,10 +124,11 @@ p3 = ggplot(traw_matched, aes(pred_score, truth_label, fill = truth_label, group
   labs(title="Raw transductive scores for correctly classified cases", x="", y="")+
   scale_x_continuous(limits = c(-0.0050, 1), breaks = seq(0, 1, 0.1)) +
   scale_fill_manual(values = colors$color) +
-  geom_density_ridges(alpha= 0.8, rel_min_height = 0.001, scale = 4, na.rm=TRUE) +
-  theme_ridges(font_size=12)+
-  theme(axis.text.y = element_text(colour = colors$color),
-        axis.text.x = element_text(size=12),
-        plot.title = element_text(size=12))+
+  geom_density_ridges(alpha= 0.8, rel_min_height = 0.001, scale = 5, na.rm=TRUE) +
+  theme_ridges(font_size=15)+
+  theme(axis.text.y = element_text(colour = colors$color, face="bold"),
+        axis.text.x = element_text(size=28),
+        plot.title = element_text(size=24))+
   theme(legend.position="none")
+p3
 ggsave(p3, file = paste0(base_dir, "Density_raw_scores_Classifiable_cases.pdf"))

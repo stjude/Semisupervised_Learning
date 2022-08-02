@@ -14,3 +14,5 @@ Precision medicine for cancer treatment relies on accurate pathological diagnosi
 
 This work has been published [here](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04764-1).
 
+## Cite this work
+Tran, Q.T., Alom, M.Z. & Orr, B.A. Comprehensive study of semi-supervised learning for DNA methylation-based supervised classification of central nervous system tumors. BMC Bioinformatics 23, 223 (2022). https://doi.org/10.1186/s12859-022-04764-1

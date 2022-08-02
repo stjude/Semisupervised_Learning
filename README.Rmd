@@ -22,6 +22,6 @@ Precision medicine for cancer treatment relies on accurate pathological diagnosi
 
 ## Paper for citation
 
-A preprint of this work is available [here](https://www.researchsquare.com/article/rs-1284799/v1).
+This work has been published on BMC Bioinformatics and is available [here](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-022-04764-1).
 
 

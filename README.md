@@ -1,5 +1,5 @@
 # Semisupervised_Learning
-![Screenshot](SSL_Fig_01.png)
+![Screenshot](SSL_Fig1_01.png)
 
 ## Background
 

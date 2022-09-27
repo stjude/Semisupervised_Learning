@@ -2,7 +2,7 @@
 colors.family = read.csv("/Volumes/qtran/Capper_reference_set/colors.family.key.csv")
 
 
-tscores = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/family_results/All_MCF_SETRED_SVM_Transductive_scores_wide.csv", header=TRUE)
+tscores = read.csv("/Volumes/qtran/Semisupervised_Learning_big_private_data/processed_data/family_results/All_MCF_SETRED_SVM_Transductive_scores_wide.csv", header=TRUE)
 iscores = read.csv("/Volumes/qtran/Semisupervised_Learning/processed_data/family_results/All_MCF_SETRED_SVM_Inductive_scores_wide.csv", header=TRUE)
 base_dir = "/Volumes/qtran/Semisupervised_Learning/figures/family_results/"
 main_dir = "/Volumes/qtran/Semisupervised_Learning/processed_data/"

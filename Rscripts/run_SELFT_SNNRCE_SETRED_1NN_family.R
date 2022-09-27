@@ -1,7 +1,7 @@
 load("/research/rgs01/home/clusterHome/qtran/Semisupervised_Learning/label_data_x.RData")
 load("/research/rgs01/home/clusterHome/qtran/Semisupervised_Learning/family_label_data_y.RData")
 source("/research/rgs01/home/clusterHome/qtran/Semisupervised_Learning/Rscripts/supporting_functions.R")
-source("/research/rgs01/home/clusterHome/qtran/Semisupervised_Learning/Rscripts/predictOneNN.R")
+#source("/research/rgs01/home/clusterHome/qtran/Semisupervised_Learning/Rscripts/predictOneNN.R")
 ###Use 70% of the Capper Reference for training
 ##first get the index of the labeled data
 acc = data.frame("Train_function" = "", "Learner"="", "Seed" = "", "Ind_ACC"="", "Trans_ACC" = "")

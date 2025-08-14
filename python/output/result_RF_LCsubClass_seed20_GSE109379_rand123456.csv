@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fe754f5f8aa3187e680200f31411f3808a0520de729886075417965530c79189
-size 1900
+Seed,Dataset,Validation,Metric,Value
+20,70LC,cross_val,accuracy,0.841
+20,70LC,cross_val,balanced_acc,0.7605333333333333
+20,70LC,cross_val,recall_weighted,0.841
+20,70LC,cross_val,precision_weighted,0.8238666666666664
+20,70LC,vs_testset,accuracy,0.887
+20,70LC,vs_testset,balanced_acc,0.81
+20,70LC,vs_testset,recall_weighted,0.887
+20,70LC,vs_testset,precision_weighted,0.878
+20,35_gseLC,cross_val,accuracy,0.8032666666666667
+20,35_gseLC,cross_val,balanced_acc,0.6902666666666665
+20,35_gseLC,cross_val,recall_weighted,0.8032666666666667
+20,35_gseLC,cross_val,precision_weighted,0.7879333333333333
+20,35_gseLC,vs_testset,accuracy,0.875
+20,35_gseLC,vs_testset,balanced_acc,0.776
+20,35_gseLC,vs_testset,recall_weighted,0.875
+20,35_gseLC,vs_testset,precision_weighted,0.863
+20,70LC_GSE,cross_val,accuracy,0.8436666666666667
+20,70LC_GSE,cross_val,balanced_acc,0.7271333333333333
+20,70LC_GSE,cross_val,recall_weighted,0.8436666666666667
+20,70LC_GSE,cross_val,precision_weighted,0.8318666666666665
+20,70LC_GSE,vs_testset,accuracy,0.898
+20,70LC_GSE,vs_testset,balanced_acc,0.802
+20,70LC_GSE,vs_testset,recall_weighted,0.898
+20,70LC_GSE,vs_testset,precision_weighted,0.891
+20,70_gseLC,cross_val,accuracy,0.8762666666666666
+20,70_gseLC,cross_val,balanced_acc,0.8089999999999999
+20,70_gseLC,cross_val,recall_weighted,0.8762666666666666
+20,70_gseLC,cross_val,precision_weighted,0.8726000000000002
+20,70_gseLC,vs_testset,accuracy,0.923
+20,70_gseLC,vs_testset,balanced_acc,0.863
+20,70_gseLC,vs_testset,recall_weighted,0.923
+20,70_gseLC,vs_testset,precision_weighted,0.913
+20,LC,cross_val,accuracy,0.8093333333333332
+20,LC,cross_val,balanced_acc,0.7367333333333335
+20,LC,cross_val,recall_weighted,0.8093333333333332
+20,LC,cross_val,precision_weighted,0.8030666666666666
+20,LC,vs_testset,accuracy,0.887
+20,LC,vs_testset,balanced_acc,0.794
+20,LC,vs_testset,recall_weighted,0.887
+20,LC,vs_testset,precision_weighted,0.877

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3a75a9a5ee44515a028c06e59f84a402c6ec5e44ff0086f888eba175023b3164
-size 936
+Seed,Dataset,Validation,Metric,Value
+2,35,cross_val,accuracy,0.7865
+2,35,cross_val,balanced_acc,0.622
+2,35,cross_val,recall_weighted,0.7865
+2,35,cross_val,precision_weighted,0.749
+2,35,vs_testset,accuracy,0.895
+2,35,vs_testset,balanced_acc,0.8
+2,35,vs_testset,recall_weighted,0.895
+2,35,vs_testset,precision_weighted,0.88
+2,70,cross_val,accuracy,0.8945000000000001
+2,70,cross_val,balanced_acc,0.787
+2,70,cross_val,recall_weighted,0.8945000000000001
+2,70,cross_val,precision_weighted,0.885
+2,70,vs_testset,accuracy,0.923
+2,70,vs_testset,balanced_acc,0.872
+2,70,vs_testset,recall_weighted,0.923
+2,70,vs_testset,precision_weighted,0.912
+2,70HC,cross_val,accuracy,0.873
+2,70HC,cross_val,balanced_acc,0.727
+2,70HC,cross_val,recall_weighted,0.873
+2,70HC,cross_val,precision_weighted,0.854
+2,70HC,vs_testset,accuracy,0.918
+2,70HC,vs_testset,balanced_acc,0.839
+2,70HC,vs_testset,recall_weighted,0.918
+2,70HC,vs_testset,precision_weighted,0.896

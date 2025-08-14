@@ -1,3 +1,337 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b883aafbac9849da07f25448c5df5308659d6b1662411af692426e8c4fb71e43
-size 15947
+Seed,Dataset,Validation,Metric,Value
+320,35,Cross validation,balanced_acc,0.71
+320,35,Cross validation,accuracy,0.84
+320,35,Cross validation,recall_weighted,0.84
+320,35,Hold-out test,accuracy,0.881
+320,35,Hold-out test,balanced_acc,0.881
+320,35,Hold-out test,recall_weighted,0.911
+320,70,Cross validation,balanced_acc,0.82
+320,70,Cross validation,accuracy,0.9
+320,70,Cross validation,recall_weighted,0.9
+320,70,Hold-out test,accuracy,0.917
+320,70,Hold-out test,balanced_acc,0.917
+320,70,Hold-out test,recall_weighted,0.918
+320,70HC,Cross validation,balanced_acc,0.8
+320,70HC,Cross validation,accuracy,0.91
+320,70HC,Cross validation,recall_weighted,0.91
+320,70HC,Hold-out test,accuracy,0.914
+320,70HC,Hold-out test,balanced_acc,0.914
+320,70HC,Hold-out test,recall_weighted,0.93
+2,35 + GSE109379,Cross validation,balanced_acc,0.7
+2,35 + GSE109379,Cross validation,accuracy,0.86
+2,35 + GSE109379,Cross validation,recall_weighted,0.86
+2,35 + GSE109379,Hold-out test,accuracy,0.88
+2,35 + GSE109379,Hold-out test,balanced_acc,0.88
+2,35 + GSE109379,Hold-out test,recall_weighted,0.91
+2,70 + GSE109379,Cross validation,balanced_acc,0.82
+2,70 + GSE109379,Cross validation,accuracy,0.9
+2,70 + GSE109379,Cross validation,recall_weighted,0.9
+2,70 + GSE109379,Hold-out test,accuracy,0.922
+2,70 + GSE109379,Hold-out test,balanced_acc,0.922
+2,70 + GSE109379,Hold-out test,recall_weighted,0.94
+2,70HC + GSE109379,Cross validation,balanced_acc,0.79
+2,70HC + GSE109379,Cross validation,accuracy,0.9
+2,70HC + GSE109379,Cross validation,recall_weighted,0.9
+2,70HC + GSE109379,Hold-out test,accuracy,0.916
+2,70HC + GSE109379,Hold-out test,balanced_acc,0.916
+2,70HC + GSE109379,Hold-out test,recall_weighted,0.927
+2,35 + HC GSE109379,Cross validation,balanced_acc,0.72
+2,35 + HC GSE109379,Cross validation,accuracy,0.9
+2,35 + HC GSE109379,Cross validation,recall_weighted,0.9
+2,35 + HC GSE109379,Hold-out test,accuracy,0.875
+2,35 + HC GSE109379,Hold-out test,balanced_acc,0.875
+2,35 + HC GSE109379,Hold-out test,recall_weighted,0.904
+2,HC,Cross validation,balanced_acc,0.81
+2,HC,Cross validation,accuracy,0.93
+2,HC,Cross validation,recall_weighted,0.93
+2,HC,Hold-out test,accuracy,0.91
+2,HC,Hold-out test,balanced_acc,0.91
+2,HC,Hold-out test,recall_weighted,0.929
+40,35 + GSE109379,Cross validation,balanced_acc,0.69
+40,35 + GSE109379,Cross validation,accuracy,0.85
+40,35 + GSE109379,Cross validation,recall_weighted,0.85
+40,35 + GSE109379,Hold-out test,accuracy,0.882
+40,35 + GSE109379,Hold-out test,balanced_acc,0.882
+40,35 + GSE109379,Hold-out test,recall_weighted,0.913
+40,70 + GSE109379,Cross validation,balanced_acc,0.81
+40,70 + GSE109379,Cross validation,accuracy,0.9
+40,70 + GSE109379,Cross validation,recall_weighted,0.9
+40,70 + GSE109379,Hold-out test,accuracy,0.925
+40,70 + GSE109379,Hold-out test,balanced_acc,0.925
+40,70 + GSE109379,Hold-out test,recall_weighted,0.929
+40,70HC + GSE109379,Cross validation,balanced_acc,0.79
+40,70HC + GSE109379,Cross validation,accuracy,0.9
+40,70HC + GSE109379,Cross validation,recall_weighted,0.9
+40,70HC + GSE109379,Hold-out test,accuracy,0.913
+40,70HC + GSE109379,Hold-out test,balanced_acc,0.913
+40,70HC + GSE109379,Hold-out test,recall_weighted,0.932
+40,35 + HC GSE109379,Cross validation,balanced_acc,0.72
+40,35 + HC GSE109379,Cross validation,accuracy,0.9
+40,35 + HC GSE109379,Cross validation,recall_weighted,0.9
+40,35 + HC GSE109379,Hold-out test,accuracy,0.88
+40,35 + HC GSE109379,Hold-out test,balanced_acc,0.88
+40,35 + HC GSE109379,Hold-out test,recall_weighted,0.908
+40,HC,Cross validation,balanced_acc,0.81
+40,HC,Cross validation,accuracy,0.93
+40,HC,Cross validation,recall_weighted,0.93
+40,HC,Hold-out test,accuracy,0.912
+40,HC,Hold-out test,balanced_acc,0.912
+40,HC,Hold-out test,recall_weighted,0.924
+40,35,Cross validation,balanced_acc,0.71
+40,35,Cross validation,accuracy,0.84
+40,35,Cross validation,recall_weighted,0.84
+40,35,Hold-out test,accuracy,0.873
+40,35,Hold-out test,balanced_acc,0.873
+40,35,Hold-out test,recall_weighted,0.908
+40,70,Cross validation,balanced_acc,0.84
+40,70,Cross validation,accuracy,0.91
+40,70,Cross validation,recall_weighted,0.91
+40,70,Hold-out test,accuracy,0.922
+40,70,Hold-out test,balanced_acc,0.922
+40,70,Hold-out test,recall_weighted,0.926
+40,70HC,Cross validation,balanced_acc,0.81
+40,70HC,Cross validation,accuracy,0.92
+40,70HC,Cross validation,recall_weighted,0.92
+40,70HC,Hold-out test,accuracy,0.907
+40,70HC,Hold-out test,balanced_acc,0.907
+40,70HC,Hold-out test,recall_weighted,0.905
+2,35,Cross validation,balanced_acc,0.71
+2,35,Cross validation,accuracy,0.83
+2,35,Cross validation,recall_weighted,0.83
+2,35,Hold-out test,accuracy,0.898
+2,35,Hold-out test,balanced_acc,0.898
+2,35,Hold-out test,recall_weighted,0.919
+2,70,Cross validation,balanced_acc,0.84
+2,70,Cross validation,accuracy,0.91
+2,70,Cross validation,recall_weighted,0.91
+2,70,Hold-out test,accuracy,0.914
+2,70,Hold-out test,balanced_acc,0.914
+2,70,Hold-out test,recall_weighted,0.922
+2,70HC,Cross validation,balanced_acc,0.82
+2,70HC,Cross validation,accuracy,0.92
+2,70HC,Cross validation,recall_weighted,0.92
+2,70HC,Hold-out test,accuracy,0.912
+2,70HC,Hold-out test,balanced_acc,0.912
+2,70HC,Hold-out test,recall_weighted,0.93
+1,35 + GSE109379,Cross validation,balanced_acc,0.7
+1,35 + GSE109379,Cross validation,accuracy,0.85
+1,35 + GSE109379,Cross validation,recall_weighted,0.85
+1,35 + GSE109379,Hold-out test,accuracy,0.889
+1,35 + GSE109379,Hold-out test,balanced_acc,0.889
+1,35 + GSE109379,Hold-out test,recall_weighted,0.915
+1,70 + GSE109379,Cross validation,balanced_acc,0.82
+1,70 + GSE109379,Cross validation,accuracy,0.9
+1,70 + GSE109379,Cross validation,recall_weighted,0.9
+1,70 + GSE109379,Hold-out test,accuracy,0.926
+1,70 + GSE109379,Hold-out test,balanced_acc,0.926
+1,70 + GSE109379,Hold-out test,recall_weighted,0.937
+1,70HC + GSE109379,Cross validation,balanced_acc,0.8
+1,70HC + GSE109379,Cross validation,accuracy,0.9
+1,70HC + GSE109379,Cross validation,recall_weighted,0.9
+1,70HC + GSE109379,Hold-out test,accuracy,0.911
+1,70HC + GSE109379,Hold-out test,balanced_acc,0.911
+1,70HC + GSE109379,Hold-out test,recall_weighted,0.925
+1,35 + HC GSE109379,Cross validation,balanced_acc,0.71
+1,35 + HC GSE109379,Cross validation,accuracy,0.89
+1,35 + HC GSE109379,Cross validation,recall_weighted,0.89
+1,35 + HC GSE109379,Hold-out test,accuracy,0.892
+1,35 + HC GSE109379,Hold-out test,balanced_acc,0.892
+1,35 + HC GSE109379,Hold-out test,recall_weighted,0.922
+1,HC,Cross validation,balanced_acc,0.81
+1,HC,Cross validation,accuracy,0.93
+1,HC,Cross validation,recall_weighted,0.93
+1,HC,Hold-out test,accuracy,0.926
+1,HC,Hold-out test,balanced_acc,0.926
+1,HC,Hold-out test,recall_weighted,0.937
+80,35,Cross validation,balanced_acc,0.7
+80,35,Cross validation,accuracy,0.82
+80,35,Cross validation,recall_weighted,0.82
+80,35,Hold-out test,accuracy,0.887
+80,35,Hold-out test,balanced_acc,0.887
+80,35,Hold-out test,recall_weighted,0.895
+80,70,Cross validation,balanced_acc,0.81
+80,70,Cross validation,accuracy,0.9
+80,70,Cross validation,recall_weighted,0.9
+80,70,Hold-out test,accuracy,0.925
+80,70,Hold-out test,balanced_acc,0.925
+80,70,Hold-out test,recall_weighted,0.922
+80,70HC,Cross validation,balanced_acc,0.81
+80,70HC,Cross validation,accuracy,0.91
+80,70HC,Cross validation,recall_weighted,0.91
+80,70HC,Hold-out test,accuracy,0.914
+80,70HC,Hold-out test,balanced_acc,0.914
+80,70HC,Hold-out test,recall_weighted,0.921
+20,35,Cross validation,balanced_acc,0.71
+20,35,Cross validation,accuracy,0.83
+20,35,Cross validation,recall_weighted,0.83
+20,35,Hold-out test,accuracy,0.895
+20,35,Hold-out test,balanced_acc,0.895
+20,35,Hold-out test,recall_weighted,0.91
+20,70,Cross validation,balanced_acc,0.83
+20,70,Cross validation,accuracy,0.91
+20,70,Cross validation,recall_weighted,0.91
+20,70,Hold-out test,accuracy,0.919
+20,70,Hold-out test,balanced_acc,0.919
+20,70,Hold-out test,recall_weighted,0.925
+20,70HC,Cross validation,balanced_acc,0.81
+20,70HC,Cross validation,accuracy,0.91
+20,70HC,Cross validation,recall_weighted,0.91
+20,70HC,Hold-out test,accuracy,0.924
+20,70HC,Hold-out test,balanced_acc,0.924
+20,70HC,Hold-out test,recall_weighted,0.92
+1,35,Cross validation,balanced_acc,0.71
+1,35,Cross validation,accuracy,0.84
+1,35,Cross validation,recall_weighted,0.84
+1,35,Hold-out test,accuracy,0.878
+1,35,Hold-out test,balanced_acc,0.878
+1,35,Hold-out test,recall_weighted,0.882
+1,70,Cross validation,balanced_acc,0.82
+1,70,Cross validation,accuracy,0.91
+1,70,Cross validation,recall_weighted,0.91
+1,70,Hold-out test,accuracy,0.91
+1,70,Hold-out test,balanced_acc,0.91
+1,70,Hold-out test,recall_weighted,0.929
+1,70HC,Cross validation,balanced_acc,0.81
+1,70HC,Cross validation,accuracy,0.91
+1,70HC,Cross validation,recall_weighted,0.91
+1,70HC,Hold-out test,accuracy,0.908
+1,70HC,Hold-out test,balanced_acc,0.908
+1,70HC,Hold-out test,recall_weighted,0.922
+80,35 + GSE109379,Cross validation,balanced_acc,0.71
+80,35 + GSE109379,Cross validation,accuracy,0.86
+80,35 + GSE109379,Cross validation,recall_weighted,0.86
+80,35 + GSE109379,Hold-out test,accuracy,0.905
+80,35 + GSE109379,Hold-out test,balanced_acc,0.905
+80,35 + GSE109379,Hold-out test,recall_weighted,0.929
+80,70 + GSE109379,Cross validation,balanced_acc,0.81
+80,70 + GSE109379,Cross validation,accuracy,0.89
+80,70 + GSE109379,Cross validation,recall_weighted,0.89
+80,70 + GSE109379,Hold-out test,accuracy,0.927
+80,70 + GSE109379,Hold-out test,balanced_acc,0.927
+80,70 + GSE109379,Hold-out test,recall_weighted,0.929
+80,70HC + GSE109379,Cross validation,balanced_acc,0.8
+80,70HC + GSE109379,Cross validation,accuracy,0.89
+80,70HC + GSE109379,Cross validation,recall_weighted,0.89
+80,70HC + GSE109379,Hold-out test,accuracy,0.931
+80,70HC + GSE109379,Hold-out test,balanced_acc,0.931
+80,70HC + GSE109379,Hold-out test,recall_weighted,0.939
+80,35 + HC GSE109379,Cross validation,balanced_acc,0.72
+80,35 + HC GSE109379,Cross validation,accuracy,0.89
+80,35 + HC GSE109379,Cross validation,recall_weighted,0.89
+80,35 + HC GSE109379,Hold-out test,accuracy,0.902
+80,35 + HC GSE109379,Hold-out test,balanced_acc,0.902
+80,35 + HC GSE109379,Hold-out test,recall_weighted,0.918
+80,HC,Cross validation,balanced_acc,0.81
+80,HC,Cross validation,accuracy,0.93
+80,HC,Cross validation,recall_weighted,0.93
+80,HC,Hold-out test,accuracy,0.931
+80,HC,Hold-out test,balanced_acc,0.931
+80,HC,Hold-out test,recall_weighted,0.938
+160,35,Cross validation,balanced_acc,0.7
+160,35,Cross validation,accuracy,0.83
+160,35,Cross validation,recall_weighted,0.83
+160,35,Hold-out test,accuracy,0.892
+160,35,Hold-out test,balanced_acc,0.892
+160,35,Hold-out test,recall_weighted,0.9
+160,70,Cross validation,balanced_acc,0.82
+160,70,Cross validation,accuracy,0.9
+160,70,Cross validation,recall_weighted,0.9
+160,70,Hold-out test,accuracy,0.933
+160,70,Hold-out test,balanced_acc,0.933
+160,70,Hold-out test,recall_weighted,0.943
+160,70HC,Cross validation,balanced_acc,0.8
+160,70HC,Cross validation,accuracy,0.91
+160,70HC,Cross validation,recall_weighted,0.91
+160,70HC,Hold-out test,accuracy,0.918
+160,70HC,Hold-out test,balanced_acc,0.918
+160,70HC,Hold-out test,recall_weighted,0.945
+20,35 + GSE109379,Cross validation,balanced_acc,0.71
+20,35 + GSE109379,Cross validation,accuracy,0.86
+20,35 + GSE109379,Cross validation,recall_weighted,0.86
+20,35 + GSE109379,Hold-out test,accuracy,0.892
+20,35 + GSE109379,Hold-out test,balanced_acc,0.892
+20,35 + GSE109379,Hold-out test,recall_weighted,0.91
+20,70 + GSE109379,Cross validation,balanced_acc,0.82
+20,70 + GSE109379,Cross validation,accuracy,0.9
+20,70 + GSE109379,Cross validation,recall_weighted,0.9
+20,70 + GSE109379,Hold-out test,accuracy,0.918
+20,70 + GSE109379,Hold-out test,balanced_acc,0.918
+20,70 + GSE109379,Hold-out test,recall_weighted,0.919
+20,70HC + GSE109379,Cross validation,balanced_acc,0.8
+20,70HC + GSE109379,Cross validation,accuracy,0.9
+20,70HC + GSE109379,Cross validation,recall_weighted,0.9
+20,70HC + GSE109379,Hold-out test,accuracy,0.933
+20,70HC + GSE109379,Hold-out test,balanced_acc,0.933
+20,70HC + GSE109379,Hold-out test,recall_weighted,0.933
+20,35 + HC GSE109379,Cross validation,balanced_acc,0.72
+20,35 + HC GSE109379,Cross validation,accuracy,0.89
+20,35 + HC GSE109379,Cross validation,recall_weighted,0.89
+20,35 + HC GSE109379,Hold-out test,accuracy,0.894
+20,35 + HC GSE109379,Hold-out test,balanced_acc,0.894
+20,35 + HC GSE109379,Hold-out test,recall_weighted,0.922
+20,HC,Cross validation,balanced_acc,0.81
+20,HC,Cross validation,accuracy,0.93
+20,HC,Cross validation,recall_weighted,0.93
+20,HC,Hold-out test,accuracy,0.916
+20,HC,Hold-out test,balanced_acc,0.916
+20,HC,Hold-out test,recall_weighted,0.933
+320,35 + GSE109379,Cross validation,balanced_acc,0.72
+320,35 + GSE109379,Cross validation,accuracy,0.86
+320,35 + GSE109379,Cross validation,recall_weighted,0.86
+320,35 + GSE109379,Hold-out test,accuracy,0.906
+320,35 + GSE109379,Hold-out test,balanced_acc,0.906
+320,35 + GSE109379,Hold-out test,recall_weighted,0.94
+320,70 + GSE109379,Cross validation,balanced_acc,0.81
+320,70 + GSE109379,Cross validation,accuracy,0.9
+320,70 + GSE109379,Cross validation,recall_weighted,0.9
+320,70 + GSE109379,Hold-out test,accuracy,0.924
+320,70 + GSE109379,Hold-out test,balanced_acc,0.924
+320,70 + GSE109379,Hold-out test,recall_weighted,0.937
+320,70HC + GSE109379,Cross validation,balanced_acc,0.8
+320,70HC + GSE109379,Cross validation,accuracy,0.9
+320,70HC + GSE109379,Cross validation,recall_weighted,0.9
+320,70HC + GSE109379,Hold-out test,accuracy,0.922
+320,70HC + GSE109379,Hold-out test,balanced_acc,0.922
+320,70HC + GSE109379,Hold-out test,recall_weighted,0.932
+320,35 + HC GSE109379,Cross validation,balanced_acc,0.72
+320,35 + HC GSE109379,Cross validation,accuracy,0.89
+320,35 + HC GSE109379,Cross validation,recall_weighted,0.89
+320,35 + HC GSE109379,Hold-out test,accuracy,0.897
+320,35 + HC GSE109379,Hold-out test,balanced_acc,0.897
+320,35 + HC GSE109379,Hold-out test,recall_weighted,0.911
+320,HC,Cross validation,balanced_acc,0.81
+320,HC,Cross validation,accuracy,0.93
+320,HC,Cross validation,recall_weighted,0.93
+320,HC,Hold-out test,accuracy,0.919
+320,HC,Hold-out test,balanced_acc,0.919
+320,HC,Hold-out test,recall_weighted,0.936
+160,35 + GSE109379,Cross validation,balanced_acc,0.7
+160,35 + GSE109379,Cross validation,accuracy,0.85
+160,35 + GSE109379,Cross validation,recall_weighted,0.85
+160,35 + GSE109379,Hold-out test,accuracy,0.905
+160,35 + GSE109379,Hold-out test,balanced_acc,0.905
+160,35 + GSE109379,Hold-out test,recall_weighted,0.923
+160,70 + GSE109379,Cross validation,balanced_acc,0.8
+160,70 + GSE109379,Cross validation,accuracy,0.89
+160,70 + GSE109379,Cross validation,recall_weighted,0.89
+160,70 + GSE109379,Hold-out test,accuracy,0.927
+160,70 + GSE109379,Hold-out test,balanced_acc,0.927
+160,70 + GSE109379,Hold-out test,recall_weighted,0.936
+160,70HC + GSE109379,Cross validation,balanced_acc,0.78
+160,70HC + GSE109379,Cross validation,accuracy,0.9
+160,70HC + GSE109379,Cross validation,recall_weighted,0.9
+160,70HC + GSE109379,Hold-out test,accuracy,0.929
+160,70HC + GSE109379,Hold-out test,balanced_acc,0.929
+160,70HC + GSE109379,Hold-out test,recall_weighted,0.95
+160,HC,Cross validation,balanced_acc,0.79
+160,HC,Cross validation,accuracy,0.93
+160,HC,Cross validation,recall_weighted,0.93
+160,HC,Hold-out test,accuracy,0.926
+160,HC,Hold-out test,balanced_acc,0.926
+160,HC,Hold-out test,recall_weighted,0.939
+160,35 + HC GSE109379,Cross validation,balanced_acc,0.71
+160,35 + HC GSE109379,Cross validation,accuracy,0.89
+160,35 + HC GSE109379,Cross validation,recall_weighted,0.89
+160,35 + HC GSE109379,Hold-out test,accuracy,0.892
+160,35 + HC GSE109379,Hold-out test,balanced_acc,0.892
+160,35 + HC GSE109379,Hold-out test,recall_weighted,0.907

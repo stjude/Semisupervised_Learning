@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f0d0a5c46049c92097a58c8aba8b59fe4a53d76f781f3a55d522a8de91405a5
-size 1864
+Seed,Dataset,Validation,Metric,Value
+40,70LC,cross_val,accuracy,0.8326
+40,70LC,cross_val,balanced_acc,0.7431333333333333
+40,70LC,cross_val,recall_weighted,0.8326
+40,70LC,cross_val,precision_weighted,0.8138000000000001
+40,70LC,vs_testset,accuracy,0.892
+40,70LC,vs_testset,balanced_acc,0.798
+40,70LC,vs_testset,recall_weighted,0.892
+40,70LC,vs_testset,precision_weighted,0.897
+40,35_gseLC,cross_val,accuracy,0.8058000000000001
+40,35_gseLC,cross_val,balanced_acc,0.6930666666666668
+40,35_gseLC,cross_val,recall_weighted,0.8058000000000001
+40,35_gseLC,cross_val,precision_weighted,0.7921333333333334
+40,35_gseLC,vs_testset,accuracy,0.88
+40,35_gseLC,vs_testset,balanced_acc,0.771
+40,35_gseLC,vs_testset,recall_weighted,0.88
+40,35_gseLC,vs_testset,precision_weighted,0.861
+40,70LC_GSE,cross_val,accuracy,0.8433333333333333
+40,70LC_GSE,cross_val,balanced_acc,0.7248
+40,70LC_GSE,cross_val,recall_weighted,0.8433333333333333
+40,70LC_GSE,cross_val,precision_weighted,0.8333999999999999
+40,70LC_GSE,vs_testset,accuracy,0.898
+40,70LC_GSE,vs_testset,balanced_acc,0.818
+40,70LC_GSE,vs_testset,recall_weighted,0.898
+40,70LC_GSE,vs_testset,precision_weighted,0.891
+40,70_gseLC,cross_val,accuracy,0.8743333333333335
+40,70_gseLC,cross_val,balanced_acc,0.8120666666666667
+40,70_gseLC,cross_val,recall_weighted,0.8743333333333335
+40,70_gseLC,cross_val,precision_weighted,0.8736000000000002
+40,70_gseLC,vs_testset,accuracy,0.913
+40,70_gseLC,vs_testset,balanced_acc,0.846
+40,70_gseLC,vs_testset,recall_weighted,0.913
+40,70_gseLC,vs_testset,precision_weighted,0.909
+40,LC,cross_val,accuracy,0.8114
+40,LC,cross_val,balanced_acc,0.7241333333333334
+40,LC,cross_val,recall_weighted,0.8114
+40,LC,cross_val,precision_weighted,0.8049333333333333
+40,LC,vs_testset,accuracy,0.895
+40,LC,vs_testset,balanced_acc,0.811
+40,LC,vs_testset,recall_weighted,0.895
+40,LC,vs_testset,precision_weighted,0.89

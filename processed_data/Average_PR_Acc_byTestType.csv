@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:142b68a1f22a4ea6ba9b31af6b024e4804d3d57314b708fea46491ef4d668d96
-size 1062
+,TrainFunction,Learner,TestType,Precision,Recall,Balanced.Accuracy
+14,SETRED,SVM,Transductive,0.962,0.935,0.967
+13,SETRED,SVM,Inductive,0.968,0.931,0.965
+1,DEMO,1NN/SVM/C5.0,Inductive,0.935,0.891,0.945
+2,DEMO,1NN/SVM/C5.0,Transductive,0.929,0.885,0.942
+15,SNNRCE,1NN,Inductive,0.926,0.885,0.942
+4,SELFT,1NN,Transductive,0.927,0.885,0.942
+3,SELFT,1NN,Inductive,0.922,0.876,0.938
+10,SETRED,1NN,Transductive,0.921,0.876,0.938
+18,TRITRAIN,1NN,Transductive,0.926,0.876,0.937
+16,SNNRCE,1NN,Transductive,0.911,0.872,0.935
+9,SETRED,1NN,Inductive,0.919,0.872,0.935
+17,TRITRAIN,1NN,Inductive,0.915,0.860,0.930
+21,TRITRAIN,SVM,Inductive,0.938,0.848,0.924
+22,TRITRAIN,SVM,Transductive,0.934,0.842,0.921
+7,SELFT,SVM,Inductive,0.920,0.841,0.920
+8,SELFT,SVM,Transductive,0.920,0.837,0.918
+19,TRITRAIN,C5.0,Inductive,0.776,0.731,0.864
+20,TRITRAIN,C5.0,Transductive,0.772,0.727,0.863
+12,SETRED,C5.0,Transductive,0.747,0.716,0.857
+11,SETRED,C5.0,Inductive,0.739,0.696,0.847
+5,SELFT,C5.0,Inductive,0.726,0.692,0.845
+6,SELFT,C5.0,Transductive,0.701,0.675,0.836

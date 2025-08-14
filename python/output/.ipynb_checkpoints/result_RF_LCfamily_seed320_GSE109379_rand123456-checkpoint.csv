@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e5ce8673193854c8747652d184798cd81744871aa28005a968d9ab7c218e731d
-size 1966
+Seed,Dataset,Validation,Metric,Value
+320,70LC,cross_val,accuracy,0.9041333333333335
+320,70LC,cross_val,balanced_acc,0.8039999999999999
+320,70LC,cross_val,recall_weighted,0.9041333333333335
+320,70LC,cross_val,precision_weighted,0.8921333333333334
+320,70LC,vs_testset,accuracy,0.954
+320,70LC,vs_testset,balanced_acc,0.865
+320,70LC,vs_testset,recall_weighted,0.954
+320,70LC,vs_testset,precision_weighted,0.955
+320,35_gseLC,cross_val,accuracy,0.8615999999999999
+320,35_gseLC,cross_val,balanced_acc,0.7050000000000001
+320,35_gseLC,cross_val,recall_weighted,0.8615999999999999
+320,35_gseLC,cross_val,precision_weighted,0.8369333333333332
+320,35_gseLC,vs_testset,accuracy,0.909
+320,35_gseLC,vs_testset,balanced_acc,0.72
+320,35_gseLC,vs_testset,recall_weighted,0.909
+320,35_gseLC,vs_testset,precision_weighted,0.892
+320,70LC_GSE,cross_val,accuracy,0.9046000000000001
+320,70LC_GSE,cross_val,balanced_acc,0.7317333333333335
+320,70LC_GSE,cross_val,recall_weighted,0.9046000000000001
+320,70LC_GSE,cross_val,precision_weighted,0.8894666666666667
+320,70LC_GSE,vs_testset,accuracy,0.943
+320,70LC_GSE,vs_testset,balanced_acc,0.839
+320,70LC_GSE,vs_testset,recall_weighted,0.943
+320,70LC_GSE,vs_testset,precision_weighted,0.937
+320,70_gseLC,cross_val,accuracy,0.9166666666666665
+320,70_gseLC,cross_val,balanced_acc,0.8099333333333333
+320,70_gseLC,cross_val,recall_weighted,0.9166666666666665
+320,70_gseLC,cross_val,precision_weighted,0.9116666666666666
+320,70_gseLC,vs_testset,accuracy,0.954
+320,70_gseLC,vs_testset,balanced_acc,0.847
+320,70_gseLC,vs_testset,recall_weighted,0.954
+320,70_gseLC,vs_testset,precision_weighted,0.948
+320,LC,cross_val,accuracy,0.8651333333333332
+320,LC,cross_val,balanced_acc,0.7500666666666665
+320,LC,cross_val,recall_weighted,0.8651333333333332
+320,LC,cross_val,precision_weighted,0.8552666666666666
+320,LC,vs_testset,accuracy,0.939
+320,LC,vs_testset,balanced_acc,0.822
+320,LC,vs_testset,recall_weighted,0.939
+320,LC,vs_testset,precision_weighted,0.933

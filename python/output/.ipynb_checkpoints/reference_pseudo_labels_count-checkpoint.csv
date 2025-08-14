@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ece25dbee1e85c69260b1e65c3a755364e5ebe0ea997b8c26c6a8a96629651e6
-size 830
+﻿Dataset,Label type,Count,Proportion
+35,reference label,973,0.347375937
+70,reference label,973,0.347375937
+70,SS label,980,0.349875045
+35gse,reference label,973,0.347375937
+35gse,gse SS label,1104,1
+70HC,reference label,973,0.347375937
+70HC,HC SS label,850,0.303463049
+35gseHC,reference label,973,0.347375937
+35gseHC,HC gse SS label,710,0.643115942
+70gse,reference label,973,0.347375937
+70gse,SS label,980,0.349875045
+70gse,gse SS label,1104,1
+70HCgse,reference label,973,0.347375937
+70HCgse,HC SS label,850,0.303463049
+70HCgse,gse SS label,1104,1
+70gseHC,reference label,973,0.347375937
+70gseHC,SS label,980,0.349875045
+70gseHC,HC gse SS label,710,0.643115942
+HC,reference label,973,0.347375937
+HC,HC SS label,850,0.303463049
+HC,HC gse SS label,710,0.643115942
+holdOut,test reference label,842,0.300606926

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:28d7784cd221ed248ac61b87ff4b54d821525690b5c3eefe72227f28a8a2ce01
-size 1208
+Seed,Dataset,Validation,Metric,Value
+1,35% + GSE109379,cross_val,balanced_acc,0.7
+1,35% + GSE109379,cross_val,accuracy,0.85
+1,35% + GSE109379,cross_val,recall_weighted,0.85
+1,35% + GSE109379,vs_testset,accuracy,0.889
+1,35% + GSE109379,vs_testset,balanced_acc,0.889
+1,35% + GSE109379,vs_testset,recall_weighted,0.915
+1,70% + GSE109379,cross_val,balanced_acc,0.82
+1,70% + GSE109379,cross_val,accuracy,0.9
+1,70% + GSE109379,cross_val,recall_weighted,0.9
+1,70% + GSE109379,vs_testset,accuracy,0.926
+1,70% + GSE109379,vs_testset,balanced_acc,0.926
+1,70% + GSE109379,vs_testset,recall_weighted,0.937
+1,70HC + GSE109379,cross_val,balanced_acc,0.81
+1,70HC + GSE109379,cross_val,accuracy,0.93
+1,70HC + GSE109379,cross_val,recall_weighted,0.93
+1,70HC + GSE109379,vs_testset,accuracy,0.926
+1,70HC + GSE109379,vs_testset,balanced_acc,0.926
+1,70HC + GSE109379,vs_testset,recall_weighted,0.937
+1,HC GSE90490 + GSE109379,cross_val,balanced_acc,0.81
+1,HC GSE90490 + GSE109379,cross_val,accuracy,0.93
+1,HC GSE90490 + GSE109379,cross_val,recall_weighted,0.93
+1,HC GSE90490 + GSE109379,vs_testset,accuracy,0.926
+1,HC GSE90490 + GSE109379,vs_testset,balanced_acc,0.926
+1,HC GSE90490 + GSE109379,vs_testset,recall_weighted,0.937

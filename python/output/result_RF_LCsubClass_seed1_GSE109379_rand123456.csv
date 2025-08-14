@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8b599c9d5e93c18240e3cead795cead69a3c23ba1e2e1798e0303aaaa28093a1
-size 1871
+Seed,Dataset,Validation,Metric,Value
+1,70LC,cross_val,accuracy,0.8309333333333332
+1,70LC,cross_val,balanced_acc,0.7425333333333335
+1,70LC,cross_val,recall_weighted,0.8309333333333332
+1,70LC,cross_val,precision_weighted,0.8109333333333333
+1,70LC,vs_testset,accuracy,0.905
+1,70LC,vs_testset,balanced_acc,0.821
+1,70LC,vs_testset,recall_weighted,0.905
+1,70LC,vs_testset,precision_weighted,0.901
+1,35_gseLC,cross_val,accuracy,0.8050666666666666
+1,35_gseLC,cross_val,balanced_acc,0.6902
+1,35_gseLC,cross_val,recall_weighted,0.8050666666666666
+1,35_gseLC,cross_val,precision_weighted,0.7883333333333333
+1,35_gseLC,vs_testset,accuracy,0.88
+1,35_gseLC,vs_testset,balanced_acc,0.766
+1,35_gseLC,vs_testset,recall_weighted,0.88
+1,35_gseLC,vs_testset,precision_weighted,0.872
+1,70LC_GSE,cross_val,accuracy,0.8436666666666668
+1,70LC_GSE,cross_val,balanced_acc,0.7199333333333332
+1,70LC_GSE,cross_val,recall_weighted,0.8436666666666668
+1,70LC_GSE,cross_val,precision_weighted,0.8265333333333333
+1,70LC_GSE,vs_testset,accuracy,0.907
+1,70LC_GSE,vs_testset,balanced_acc,0.821
+1,70LC_GSE,vs_testset,recall_weighted,0.907
+1,70LC_GSE,vs_testset,precision_weighted,0.91
+1,70_gseLC,cross_val,accuracy,0.8742000000000001
+1,70_gseLC,cross_val,balanced_acc,0.8139333333333333
+1,70_gseLC,cross_val,recall_weighted,0.8742000000000001
+1,70_gseLC,cross_val,precision_weighted,0.8740000000000001
+1,70_gseLC,vs_testset,accuracy,0.924
+1,70_gseLC,vs_testset,balanced_acc,0.85
+1,70_gseLC,vs_testset,recall_weighted,0.924
+1,70_gseLC,vs_testset,precision_weighted,0.921
+1,LC,cross_val,accuracy,0.8068000000000002
+1,LC,cross_val,balanced_acc,0.7233999999999999
+1,LC,cross_val,recall_weighted,0.8068000000000002
+1,LC,cross_val,precision_weighted,0.7960666666666666
+1,LC,vs_testset,accuracy,0.895
+1,LC,vs_testset,balanced_acc,0.798
+1,LC,vs_testset,recall_weighted,0.895
+1,LC,vs_testset,precision_weighted,0.877

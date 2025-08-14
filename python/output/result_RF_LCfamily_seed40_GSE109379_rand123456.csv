@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:16c61bb5ee35afc211398e4438502c137771bf278606e26ee8552cd5b2e56925
-size 1864
+Seed,Dataset,Validation,Metric,Value
+40,70LC,cross_val,accuracy,0.8859333333333334
+40,70LC,cross_val,balanced_acc,0.7723333333333334
+40,70LC,cross_val,recall_weighted,0.8859333333333334
+40,70LC,cross_val,precision_weighted,0.8649333333333333
+40,70LC,vs_testset,accuracy,0.937
+40,70LC,vs_testset,balanced_acc,0.848
+40,70LC,vs_testset,recall_weighted,0.937
+40,70LC,vs_testset,precision_weighted,0.935
+40,35_gseLC,cross_val,accuracy,0.8554666666666667
+40,35_gseLC,cross_val,balanced_acc,0.6756666666666666
+40,35_gseLC,cross_val,recall_weighted,0.8554666666666667
+40,35_gseLC,cross_val,precision_weighted,0.83
+40,35_gseLC,vs_testset,accuracy,0.912
+40,35_gseLC,vs_testset,balanced_acc,0.742
+40,35_gseLC,vs_testset,recall_weighted,0.912
+40,35_gseLC,vs_testset,precision_weighted,0.902
+40,70LC_GSE,cross_val,accuracy,0.9004
+40,70LC_GSE,cross_val,balanced_acc,0.7107333333333333
+40,70LC_GSE,cross_val,recall_weighted,0.9004
+40,70LC_GSE,cross_val,precision_weighted,0.8819333333333333
+40,70LC_GSE,vs_testset,accuracy,0.941
+40,70LC_GSE,vs_testset,balanced_acc,0.848
+40,70LC_GSE,vs_testset,recall_weighted,0.941
+40,70LC_GSE,vs_testset,precision_weighted,0.945
+40,70_gseLC,cross_val,accuracy,0.9198000000000001
+40,70_gseLC,cross_val,balanced_acc,0.811
+40,70_gseLC,cross_val,recall_weighted,0.9198000000000001
+40,70_gseLC,cross_val,precision_weighted,0.9129333333333335
+40,70_gseLC,vs_testset,accuracy,0.962
+40,70_gseLC,vs_testset,balanced_acc,0.873
+40,70_gseLC,vs_testset,recall_weighted,0.962
+40,70_gseLC,vs_testset,precision_weighted,0.955
+40,LC,cross_val,accuracy,0.8586666666666665
+40,LC,cross_val,balanced_acc,0.7314
+40,LC,cross_val,recall_weighted,0.8586666666666665
+40,LC,cross_val,precision_weighted,0.8445333333333331
+40,LC,vs_testset,accuracy,0.938
+40,LC,vs_testset,balanced_acc,0.824
+40,LC,vs_testset,recall_weighted,0.938
+40,LC,vs_testset,precision_weighted,0.933

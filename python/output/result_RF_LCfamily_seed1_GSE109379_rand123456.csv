@@ -1,3 +1,41 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c470ca1a6894fd6091b58116ff713d2785895d30c222386e4636c6848ea131b
-size 1823
+Seed,Dataset,Validation,Metric,Value
+1,70LC,cross_val,accuracy,0.9014
+1,70LC,cross_val,balanced_acc,0.8107333333333333
+1,70LC,cross_val,recall_weighted,0.9014
+1,70LC,cross_val,precision_weighted,0.8877333333333333
+1,70LC,vs_testset,accuracy,0.96
+1,70LC,vs_testset,balanced_acc,0.879
+1,70LC,vs_testset,recall_weighted,0.96
+1,70LC,vs_testset,precision_weighted,0.953
+1,35_gseLC,cross_val,accuracy,0.8586000000000001
+1,35_gseLC,cross_val,balanced_acc,0.6756666666666666
+1,35_gseLC,cross_val,recall_weighted,0.8586000000000001
+1,35_gseLC,cross_val,precision_weighted,0.8315333333333333
+1,35_gseLC,vs_testset,accuracy,0.916
+1,35_gseLC,vs_testset,balanced_acc,0.764
+1,35_gseLC,vs_testset,recall_weighted,0.916
+1,35_gseLC,vs_testset,precision_weighted,0.909
+1,70LC_GSE,cross_val,accuracy,0.9066
+1,70LC_GSE,cross_val,balanced_acc,0.7457333333333332
+1,70LC_GSE,cross_val,recall_weighted,0.9066
+1,70LC_GSE,cross_val,precision_weighted,0.8938666666666665
+1,70LC_GSE,vs_testset,accuracy,0.941
+1,70LC_GSE,vs_testset,balanced_acc,0.839
+1,70LC_GSE,vs_testset,recall_weighted,0.941
+1,70LC_GSE,vs_testset,precision_weighted,0.936
+1,70_gseLC,cross_val,accuracy,0.9161333333333334
+1,70_gseLC,cross_val,balanced_acc,0.7902
+1,70_gseLC,cross_val,recall_weighted,0.9161333333333334
+1,70_gseLC,cross_val,precision_weighted,0.9130666666666669
+1,70_gseLC,vs_testset,accuracy,0.95
+1,70_gseLC,vs_testset,balanced_acc,0.842
+1,70_gseLC,vs_testset,recall_weighted,0.95
+1,70_gseLC,vs_testset,precision_weighted,0.943
+1,LC,cross_val,accuracy,0.8637333333333334
+1,LC,cross_val,balanced_acc,0.7557333333333334
+1,LC,cross_val,recall_weighted,0.8637333333333334
+1,LC,cross_val,precision_weighted,0.8540666666666665
+1,LC,vs_testset,accuracy,0.941
+1,LC,vs_testset,balanced_acc,0.849
+1,LC,vs_testset,recall_weighted,0.941
+1,LC,vs_testset,precision_weighted,0.936
